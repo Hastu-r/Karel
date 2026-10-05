@@ -3,7 +3,10 @@
 definir tourner_droite:
     repeter 3 fois:
         tourner_gauche
+repeter 3 fois:
+    avancer
+    avancer
+    poser_balise
+    tourner_droite
 avancer
 avancer
-poser_balise
-tourner_droite
