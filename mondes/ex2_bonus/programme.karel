@@ -1,1 +1,30 @@
 # Exercice 2 bonus : Un S en balises
+
+definir tourner_droite:
+    tourner_gauche
+    tourner_gauche
+    tourner_gauche
+
+definir pose_balise:
+    poser_balise
+    avancer
+
+definir ligne:
+    tant que devant_libre:
+        pose_balise
+    tant que pas regarde_sud:
+        tourner_gauche
+    pose_balise
+    poser_balise
+    avancer
+
+ligne
+tourner_gauche
+ligne
+tourner_droite
+tant que devant_libre:
+    pose_balise
+poser_balise
+
+
+
