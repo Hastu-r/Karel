@@ -1,1 +1,24 @@
 # Exercice 4 bonus : Le verger
+
+definir ligne:
+    repeter 3 fois:
+        poser_balise
+        avancer
+        avancer
+    poser_balise
+
+definir tourne:
+    tant que pas regarde_sud:
+        tourner_gauche
+    avancer
+    avancer
+
+ligne
+tourne
+tant que pas regarde_ouest:
+    tourner_gauche
+ligne
+tourne
+tant que pas regarde_est:
+    tourner_gauche
+ligne
