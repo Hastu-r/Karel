@@ -1,1 +1,15 @@
 # Exercice 1 bonus : Le tour du lac
+
+tant que pas regarde_sud:
+    avancer
+    si balise_ici:
+        ramasser_balise
+    si devant_bloque:
+        tourner_gauche
+
+tant que pas regarde_est:
+    avancer
+    si balise_ici:
+        ramasser_balise
+    si devant_bloque:
+        tourner_gauche
