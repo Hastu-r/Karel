@@ -1,5 +1,6 @@
 # Exercice 4 : monter l’escalier avec repeter
 # Commentaire
+# Stuff
 
 definir tourner_droite:
     repeter 3 fois:
