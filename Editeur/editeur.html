@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Éditeur de mondes Karel</title>
+<link rel="stylesheet" href="style/editeur.css">
+</head>
+<body>
+<h1>Éditeur de mondes Karel</h1>
+
+<div class="bar">
+  <button id="ouvrirMonde">Ouvrir un monde</button>
+  <button id="ouvrirConsigne">Ouvrir une consigne</button>
+  <button id="annuler" disabled>Annuler</button>
+  <button id="retablir" disabled>Rétablir</button>
+</div>
+
+<main>
+  <section id="zone-consignes">
+    <h2>Consignes</h2>
+    <textarea id="md" spellcheck="false" placeholder="# Exercice 1 — Titre&#10;&#10;## Karel&#10;Décrivez ici ce que Karel doit faire…"></textarea>
+    <h3>Aperçu</h3>
+    <div id="apercu" class="md"></div>
+    <div class="export">
+      <label>Nom du fichier <input type="text" id="nomConsigne" value="CONSIGNES.md"></label>
+      <button class="main" id="exporterConsigne">Exporter la consigne</button>
+    </div>
+  </section>
+
+  <section id="zone-monde">
+    <h2>Monde</h2>
+
+    <div class="champs">
+      <label>Titre <input type="text" id="titre" placeholder="ex. Monde 1 : le couloir"></label>
+      <label>Largeur <input type="number" id="larg" min="1" max="40" value="8"></label>
+      <label>Hauteur <input type="number" id="haut" min="1" max="40" value="5"></label>
+      <label>Balises dans le sac <input type="number" id="sac" min="0" placeholder="illimité"></label>
+    </div>
+
+    <div class="grille">
+      <h3>Départ</h3>
+      <div class="defile"><canvas id="cvA" role="img" aria-label="Monde de départ"></canvas></div>
+    </div>
+
+    <div class="barre-outils">
+      <div class="palette" role="toolbar" aria-label="Outils">
+        <button class="outil" data-outil="karel" title="Karel : cliquez de nouveau sur le bouton pour changer son orientation"><span class="ico" id="icoKarel">▶</span> Karel</button>
+        <button class="outil actif" data-outil="mur" title="Mur"><span class="ico">■</span> Mur</button>
+        <button class="outil" data-outil="balise" title="Balise : un clic ajoute 1 (maximum 9)"><span class="ico">●</span> Balise</button>
+        <button class="outil" data-outil="gomme" title="Gomme"><span class="ico">✕</span> Gomme</button>
+      </div>
+      <div class="outils-arrivee">
+        <button id="copier">Copier le départ vers l’arrivée</button>
+        <label><input type="checkbox" id="sansArrivee"> Pas d’état d’arrivée</label>
+      </div>
+      <p class="aide">Glissez pour peindre. Clic droit : gomme (−1 avec la balise).</p>
+    </div>
+
+    <div class="grille" id="blocArrivee">
+      <h3>Arrivée</h3>
+      <div class="defile"><canvas id="cvB" role="img" aria-label="Monde d’arrivée"></canvas></div>
+    </div>
+
+    <div id="msg" role="status"></div>
+
+    <div class="export">
+      <label>Nom du fichier <input type="text" id="nomMonde" value="monde.monde"></label>
+      <button class="main" id="exporterMonde">Exporter le monde</button>
+    </div>
+  </section>
+</main>
+
+<input type="file" id="fichierMonde" accept=".monde,.txt">
+<input type="file" id="fichierConsigne" accept=".md,.txt">
+
+<details>
+<summary>Aide</summary>
+<p><strong>Départ</strong> : l’état du monde au lancement du programme. <strong>Arrivée</strong> : l’état à atteindre. Dans l’arrivée, une balise est une balise que Karel doit avoir posée ; les balises absentes doivent avoir été ramassées. Si Karel est placé dans l’arrivée, sa position et son orientation sont aussi vérifiées ; sinon seul le contenu des cases compte.</p>
+<p>Les murs se dessinent dans le départ et sont recopiés automatiquement dans l’arrivée. Une case ne peut pas contenir à la fois Karel et une balise (limite du format de monde).</p>
+<p><strong>Karel</strong> : cliquez de nouveau sur le bouton de la palette pour tourner Karel, ou cliquez sur Karel dans la grille. <strong>Raccourcis</strong> : Ctrl+Z annule, Ctrl+Y rétablit.</p>
+<p>Les fichiers exportés sont téléchargés par le navigateur : placez-les ensuite dans le dossier <code>mondes/…</code> de l’exercice.</p>
+</details>
+
+<script src="script/editeur.js"></script>
+</body>
+</html>
