@@ -1,1 +1,24 @@
 # Projet : Karel dans le labyrinthe
+
+tant que devant_libre:
+    avancer
+
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
+
+definir test_depart:
+    si pas devant_libre:
+        tant que pas devant_libre:
+            tourner_gauche
+test_depart
+
+tant que pas balise_ici:
+    si devant_libre:
+        avancer
+        si droite_libre:
+            tourner_droite
+        si pas devant_libre:
+            tant que pas devant_libre:
+                tourner_gauche
+ramasser_balise

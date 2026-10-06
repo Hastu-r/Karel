@@ -1,14 +1,47 @@
 # Projet : Karel le jardinier
 
-avancer
-avancer
-ramasser_balise
-avancer
-avancer
-avancer 
-ramasser_balise
-avancer
-avancer
-ramasser_balise
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
 
-# Tant que devant pas libre tournre_gauche ?
+# Fonction quii positionne le robot ne bas à gauche et regardant vers l'est
+definir position_départ:
+    tant que pas regarde_sud:
+        tourner_gauche
+    repeter 2 fois:
+        tant que devant_libre:
+            avancer
+        tourner_droite
+    si balise_ici:
+        ramasser_balise
+    tourner_droite
+
+position_départ
+
+definir lignes:
+    tant que devant_libre:
+        avancer
+        si balise_ici:
+            tant que balise_ici:
+                ramasser_balise
+    tant que pas regarde_nord:
+        tourner_gauche
+    si pas devant_libre:
+        si gauche_libre:
+            tourner_gauche
+        sinon:
+            tourner_droite
+    sinon:
+        avancer
+        si balise_ici:
+            tant que balise_ici:
+                ramasser_balise
+        si gauche_libre:
+            tourner_gauche
+        sinon:
+            tourner_droite
+    
+repeter 6 fois:
+    lignes
+    
+
