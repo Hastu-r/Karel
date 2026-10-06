@@ -55,5 +55,17 @@
  "ex8/mondes/5b_dos_a_la_sortie.monde",
  "ex8/mondes/6a_salle.monde",
  "ex8/mondes/6b_salle_piliers.monde",
- "ex8/programme.karel"
+ "ex8/programme.karel",
+ "ex9/CONSIGNES.md",
+ "ex9/mondes/1a_virage_gauche.monde",
+ "ex9/mondes/1b_virage_droite.monde",
+ "ex9/mondes/2a_trois_virages.monde",
+ "ex9/mondes/2b_six_virages.monde",
+ "ex9/mondes/3a_demi_tour.monde",
+ "ex9/mondes/3b_rebonds.monde",
+ "ex9/mondes/4a_cailloux.monde",
+ "ex9/mondes/4b_grand_labyrinthe",
+ "ex9/mondes/5a_murs.monde",
+ "ex9/mondes/5b_grand_parcours.monde",
+ "ex9/programme.karel"
 ]
