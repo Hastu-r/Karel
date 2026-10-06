@@ -73,8 +73,3 @@ tant que pas balise_ici:
 tant que balise_ici:
     test_balise1
   
-    
-
-
-
-#Avoir une def test_balise qui vérifie pour les cas de 1, 2 ou 4

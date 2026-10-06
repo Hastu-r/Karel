@@ -25,3 +25,5 @@ tant que pas balise_ici:
     si devant_bloque:
         tourner_gauche
 ramasser_balise
+
+tourner_droite
