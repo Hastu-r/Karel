@@ -1,1 +1,80 @@
 # Projet final : la chasse au trésor
+
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
+
+definir demi_tour:
+    si devant_bloque:
+        tourner_gauche
+        tourner_gauche
+
+definir pose_balise:
+    tant que sac_non_vide:
+        poser_balise
+
+definir test_balise5:
+    pose_balise
+    avancer
+    tant que pas balise_ici:
+        demi_tour
+        avancer
+
+definir test_balise4:
+    ramasser_balise
+    si balise_ici:
+        test_balise5
+
+definir test_balise3:
+    ramasser_balise
+    si pas balise_ici:
+        tourner_gauche
+        tourner_gauche
+        pose_balise
+        avancer
+        tant que pas balise_ici:
+            demi_tour
+            avancer
+    sinon:
+        test_balise4
+
+definir test_balise2:
+    ramasser_balise
+    si pas balise_ici:
+        tourner_droite
+        pose_balise
+        avancer
+        tant que pas balise_ici:
+            demi_tour
+            avancer
+    sinon:
+        test_balise3
+
+definir test_balise1:
+    ramasser_balise
+    si pas balise_ici:
+        tourner_gauche
+        pose_balise
+        avancer
+        tant que pas balise_ici:
+            demi_tour
+            avancer
+    sinon:
+        test_balise2
+
+
+
+tant que pas balise_ici:
+    si devant_bloque:
+        tourner_gauche
+        tourner_gauche
+    avancer
+
+tant que balise_ici:
+    test_balise1
+  
+    
+
+
+
+#Avoir une def test_balise qui vérifie pour les cas de 1, 2 ou 4
