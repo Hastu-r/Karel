@@ -1,1 +1,17 @@
 # Exercice 5 bonus : Le facteur
+
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
+    
+tant que devant_libre:
+    si balise_ici:
+        ramasser_balise
+    avancer
+    si devant_bloque:
+        si droite_libre:
+            tourner_droite
+        sinon:
+            tourner_gauche
+si balise_ici:
+    ramasser_balise
